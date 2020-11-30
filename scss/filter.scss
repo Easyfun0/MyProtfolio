@@ -1,0 +1,80 @@
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -ms-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+$bg1: "../../Portfolio/image/lunch2.jpg";
+$bg2: "../../Portfolio/image/lunch.jpg";
+$bg3: "../../Portfolio/image/coffee_bag.jpg";
+$bg4: "../../Portfolio/image/ham.png";
+
+
+
+// section .teams{
+//   display: flex;
+//   flex-direction: column;
+// }
+.teams ul {
+  list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+  li {
+    float: left; 
+    width: 16.666%; 
+    height: 600px;
+    opacity: 0.4;
+    @include transition(all .5s ease-in-out);
+    
+    &:hover,
+    &:first-child ~ li:last-child {
+      width: 50%;
+      opacity: 1;
+      @include transition(all .5s ease-in-out);
+    }
+    
+    &:hover ~ li:last-child {
+      width: 16.666%;
+      opacity: 0.4;
+    }
+    
+    &:nth-child(1) {
+      background: url($bg1) top center no-repeat;
+    }
+    &:nth-child(2) {
+      background: url($bg2) top right no-repeat;
+    }
+    &:nth-child(3) {
+      background: url($bg3) top center no-repeat;
+    }
+    &:nth-child(4) {
+      background: url($bg4) top center no-repeat;
+    }
+  }
+  
+} // End ul
+
+/** Add cool filter efects **/
+.teams ul li {
+  &::before {
+    content: "";
+    display:block;
+    width:0;
+    height:50%;
+    @include transition(all .5s ease-in-out);
+  }
+
+  &:nth-child(1)::before { background-color: rgba(255, 87, 34, .2)}
+  &:nth-child(2)::before { background-color: rgba(76, 175, 80, .25)}
+  &:nth-child(3)::before { background-color: rgba(33, 150, 243, .25)}
+  &:nth-child(4)::before { background-color: rgba(156, 39, 176, .2)}
+}
+
+@media (max-width: 990px) {
+  .teams ul{
+    li{
+      height: 400px;
+    }
+  }
+}
