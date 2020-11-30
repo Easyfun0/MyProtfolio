@@ -1,0 +1,76 @@
+.teams ul {
+  list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.teams ul li {
+  float: left;
+  width: 16.666%;
+  height: 600px;
+  opacity: 0.4;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.teams ul li:hover,
+.teams ul li:first-child ~ li:last-child {
+  width: 50%;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.teams ul li:hover ~ li:last-child {
+  width: 16.666%;
+  opacity: 0.4;
+}
+
+.teams ul li:nth-child(1) {
+  background: url("../../Portfolio/image/lunch2.jpg") top center no-repeat;
+}
+
+.teams ul li:nth-child(2) {
+  background: url("../../Portfolio/image/lunch.jpg") top right no-repeat;
+}
+
+.teams ul li:nth-child(3) {
+  background: url("../../Portfolio/image/coffee_bag.jpg") top center no-repeat;
+}
+
+.teams ul li:nth-child(4) {
+  background: url("../../Portfolio/image/ham.png") top center no-repeat;
+}
+
+/** Add cool filter efects **/
+.teams ul li::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 50%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.teams ul li:nth-child(1)::before {
+  background-color: rgba(255, 87, 34, 0.2);
+}
+
+.teams ul li:nth-child(2)::before {
+  background-color: rgba(76, 175, 80, 0.25);
+}
+
+.teams ul li:nth-child(3)::before {
+  background-color: rgba(33, 150, 243, 0.25);
+}
+
+.teams ul li:nth-child(4)::before {
+  background-color: rgba(156, 39, 176, 0.2);
+}
+
+@media (max-width: 990px) {
+  .teams ul li {
+    height: 400px;
+  }
+}
+/*# sourceMappingURL=filter.css.map */
